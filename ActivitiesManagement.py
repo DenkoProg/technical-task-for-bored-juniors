@@ -58,4 +58,4 @@ class ActivityDatabase:
             ORDER BY id DESC
             LIMIT ?
         """, (number_of_activities,))
-        return [Activity(*row[:-1]) for row in self.cursor.fetchall()]
+        return [Activity(*row[1:]) for row in self.cursor.fetchall()]
